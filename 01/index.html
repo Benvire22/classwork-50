@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Class work 50 react jsx</title>
+    <style>
+        .person {
+            display: inline-block;
+            margin: 10px;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 2px #ccc;
+            width: 200px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+    const person = {jane: 28, john: 30};
+    const {jane, john} = person;
+
+    console.log(jane);
+    console.log(john);
+
+    const Person = ({name, age}) => {
+        return (
+            <div className="person">
+                <h1>{name}</h1>
+                <p>Age: {age}</p>
+            </div>
+
+        );
+    };
+
+
+    const people = (
+        <>
+            <Person name="Jane" age="28"/>
+            <Person name="John" age="30"/>
+        </>
+    );
+
+
+    // const root = document.getElementById('root');
+    // ReactDOM.createRoot(root).render(person);
+
+
+    ReactDOM.render(people, document.getElementById('root'));
+</script>
+</body>
+</html>
